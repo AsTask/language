@@ -1,0 +1,12 @@
+{% extends "template/base/index.html" %}
+
+{% set title = lc["title"] %}
+{% block content %}
+    <div class="route">
+        <p><span>»</span><a href="{{ url_path("panel") }}">
+            {{- lc["route"]["panel"] -}}
+        </a></p>
+        <p><span>»</span>{{ lc["route"]["set_session"] }}</p>
+        <div class="clear"></div>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "template/base/index.html" %}
+
+{% set title = lc["title"] %}
+{% block content %}
+    <div class="route">
+        <p><span>»</span><a href="{{ url_path("panel") }}">
+            {{- lc["route"]["panel"] -}}
+        </a></p>
+        <p><span>»</span>{{ lc["route"]["redirect"] }}</p>
+        <div class="clear"></div>
+    </div>
+    <style>
+        .form {
+            margin: 16px 16px 32px 16px;
+        }
+        .form p {
+            padding-right: 8px
+        }
+    </style>
+    <form method="post">
+        <div class="form">
+            <p><button type="submit" name="redirect">{{ lc["redirect_index"] }}</button></p>
+        </div>
+    </form>
+{% endblock %}

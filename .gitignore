@@ -1,0 +1,4 @@
+﻿__pycache__/
+.idea
+/instance/data/.*
+/instance/data/*.pkl

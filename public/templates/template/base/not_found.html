@@ -1,0 +1,14 @@
+{% extends "template/base/index.html" %}
+
+{% set title = lc["title"] %}
+{% block content %}
+    <div class="not_found">
+        <p>{{ lc["content"] }}</p>
+    </div>
+    <form method="post">
+        <ul class="menu">
+            <li><button type="submit" name="base-lang" value="en">en</button></li>
+            <li><button type="submit" name="base-lang" value="ru">ru</button></li>
+        </ul>
+    </form>
+{% endblock %}

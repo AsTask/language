@@ -1,0 +1,215 @@
+:root {
+    --font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --rgb-header-background: rgb(102, 111, 136);
+    --rgb-header-link: rgb(209, 212, 220);
+    --rgb-text-color: rgb(25, 25, 25);
+    --rgb-link-color: rgb(47, 93, 191);
+    --rgb-link-hover: rgb(47, 84, 164);
+    --rgb-link-active: rgb(255, 0, 0);
+    --rgb-border-light: rgb(203, 207, 217);
+    --rgb-border-dark: rgb(207, 211, 221);
+    --rgb-placeholder: rgb(182, 182, 182);
+    --rgb-color-white: rgb(255, 255, 255);
+    --rgb-color-black: rgb(0, 0, 0);
+    --rgb-color-red: rgb(255, 0, 0);
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 400 0.95rem var(--font-sans-serif);
+    line-height: 1.5;
+    color: var(--rgb-text-color);
+    background-color: var(--rgb-color-white);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent
+}
+table {
+    border-collapse: collapse;
+}
+select {
+    padding: 4px 10px;
+    border: 1px solid var(--rgb-border-light);
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 7px 8px;
+    border: 0;
+    position: relative;
+    right: 8px;
+}
+input::placeholder {
+    color: var(--rgb-placeholder);
+}
+input:-webkit-autofill {
+    box-shadow: inset 0 0 0 1000px var(--rgb-color-white);
+}
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+a, button {
+    color: var(--rgb-link-color);
+    text-decoration: none;
+}
+a:hover, button:hover {
+    color: var(--rgb-link-hover);
+    text-decoration: underline;
+}
+a:active, button:active {
+    color: var(--rgb-link-active);
+}
+button:focus, select:focus, input:focus {
+    outline: 0;
+}
+/* -- container -- */
+.container, .mini-container {
+    width: 100%;
+    min-width: 310px;
+    margin: 0 auto;
+}
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px
+    }
+}
+@media (min-width: 576px) {
+    .mini-container {
+        max-width: 540px
+    }
+}
+/* -- general -- */
+.clear {
+    clear: both;
+}
+.name {
+    display: block;
+    float: left;
+    margin-top: 12px;
+    padding: 0 22px 2px 22px;
+}
+.input {
+    clear: both;
+    margin: 0 12px;
+    padding: 0 8px;
+    border: 1px solid var(--rgb-border-light);
+    border-radius: 2px;
+}
+.warning {
+    padding: 2px 16px 0 16px;
+    color: rgb(255, 0, 0);
+}
+.bottom {
+    margin-top: 18px;
+    padding: 16px 12px 30px 12px;
+    border-top: 2px solid var(--rgb-border-dark);
+}
+.not_found{
+    padding: 24px 16px 32px 16px;
+}
+/* -- .button -- */
+.button {
+    padding: 10px 14px 8px 14px;
+    background: var(--rgb-link-color);
+    font-size: 12px;
+    color: var(--rgb-header-link);
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.button:hover {
+    background: var(--rgb-link-hover);
+    color: var(--rgb-color-white);
+    text-decoration: none;
+}
+.button:active {
+    background: var(--rgb-link-active);
+    color: var(--rgb-color-white);
+}
+/* -- .menu -- */
+.menu {
+    padding: 16px 10px 32px 10px;
+    list-style-type: none;
+}
+.menu li {
+    padding-bottom: 6px;
+}
+.menu li:last-child {
+    padding-bottom: 0;
+}
+/* -- .route -- */
+.route {
+    padding-top: 6px;
+    border-bottom: 2px solid var(--rgb-border-light);
+}
+.route p {
+    display: block;
+    float: left;
+    padding: 0 6px 6px 0;
+    cursor: default;
+}
+.route p span {
+    padding-right: 6px;
+}
+.route p[class="red"] span {
+    color: var(--rgb-text-color);
+}
+/* -- .header -- */
+.header {
+    line-height: 1.0;
+    color: var(--rgb-color-white);
+    background: var(--rgb-header-background);
+}
+.header a {
+    text-decoration: none;
+}
+.header p {
+    cursor: default;
+}
+.header .left {
+    float: left;
+    padding: 12px 12px 0 12px;
+}
+.header .logo {
+    display: block;
+    padding: 0 2px 2px 4px;
+    border-bottom: 2px solid transparent;
+    font-size: 1.1rem;
+    color: var(--rgb-color-white);
+    font-style: italic;
+}
+.header a.logo {
+    border-bottom: 2px solid transparent;
+    color: var(--rgb-header-link);
+}
+.header a:hover.logo {
+    border-bottom: 2px solid var(--rgb-color-white);
+    color: var(--rgb-color-white);
+}
+.header a:active.logo {
+    color: var(--rgb-color-red);
+    border-bottom: 2px solid var(--rgb-color-red);
+}
+.header .right {
+    float: right;
+    padding: 24px 12px 4px 0;
+}
+.header .link {
+    display: block;
+    padding: 1px 0 2px 0;
+    border-bottom: 2px solid transparent;
+    font-size: 0.9rem;
+    color: var(--rgb-header-link);
+}
+.header .link:hover {
+    border-bottom: 2px solid var(--rgb-color-white);
+    color: var(--rgb-color-white);
+}
+.header .link:active {
+    border-bottom: 2px solid var(--rgb-color-red);
+    color: var(--rgb-color-red);
+}
+/* -- end -- */

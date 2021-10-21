@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ routes("static", path="/base/css/style.css") }}">
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="left">
+            {%- if index -%}
+                <p class="logo">Astask</p>
+            {%- else -%}
+                <a class="logo" href="{{ href_index }}">Astask</a>
+            {%- endif -%}
+        </div>
+        <div class="right"><a class="link" href="{{ url_path("panel") }}">{{ lt["sign_in"] }}</a></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="container">{% block content %}{% endblock %}</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends "template/base/index.html" %}
+
+{% set title = lc["title"] %}
+{% block content %}
+    <div class="route">
+        <p><span>»</span>{{ lc["route"] }}</p>
+        <div class="clear"></div>
+    </div>
+    <style>
+        .table {
+            margin: 8px 16px 0 16px;
+        }
+        .table p {
+            padding-right: 8px
+        }
+    </style>
+    <table class="table">
+        <tr>
+            <td><p>Cookies:</p></td>
+            <td>{{ cookies_key }}</td>
+            <td>=</td>
+            <td>{{ cookies_value }}</td>
+        </tr>
+    </table>
+    <ul class="menu">
+        <li><a href="{{ url_path("panel", path="set_cookie") }}">{{ lc["set_cookie"] }}</a></li>
+        <li><a href="{{ url_path("panel", path="delete_cookie") }}">{{ lc["delete_cookie"] }}</a></li>
+    </ul>
+    <table class="table">
+        <tr>
+            <td><p>Session:</p></td>
+            <td>{{ session_key }}</td>
+            <td>=</td>
+            <td>{{ session_value }}</td>
+        </tr>
+    </table>
+    <ul class="menu">
+        <li><a href="{{ url_path("panel", path="set_session") }}">{{ lc["set_session"] }}</a></li>
+        <li><a href="{{ url_path("panel", path="delete_session") }}">{{ lc["delete_session"] }}</a></li>
+    </ul>
+    <ul class="menu">
+        <li><a href="{{ url_path("panel", path="redirect") }}">{{ lc["redirect"] }}</a></li>
+    </ul>
+    <form method="post">
+        <ul class="menu">
+            <li><button type="submit" name="base-lang" value="en">en</button></li>
+            <li><button type="submit" name="base-lang" value="ru">ru</button></li>
+        </ul>
+    </form>
+{% endblock %}
